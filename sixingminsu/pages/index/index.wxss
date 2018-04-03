@@ -5,9 +5,34 @@
   margin: 0 auto;
   overflow: hidden;
 }
-
 .login-hi {
   width: 275rpx;
   height: 50rpx;
   margin: 180rpx 0 86rpx 0;
+}
+.login-text {
+  width: 100%;
+  height: auto;
+  font-size: 36rpx;
+  margin-bottom: 15rpx;
+}
+.login-text:nth-child(3) {
+  margin-bottom: 58rpx;
+}
+.login-input {
+  width: 100%;
+  height: 115rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.login-input input {
+  font-size: 28rpx;
+  color: #757475;
+  height: 35rpx;
+  line-break: 35rpx;
+  padding: 40rpx 0;
+}
+.login-btn {
+  width: 608rpx;
+  height: 94rpx;
+  margin-top: 82rpx;
 }
