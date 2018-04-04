@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="header">
+      <view class="header-text">日</view>
+      <view class="header-text">一</view>
+      <view class="header-text">二</view>
+      <view class="header-text">三</view>
+      <view class="header-text">四</view>
+      <view class="header-text">五</view>
+      <view class="header-text">六</view>
+    </view>
+    <view class="body">
+      <calender disabled="{{disabled}}" length="6"></calender>
+    </view>
+  </view>

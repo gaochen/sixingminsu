@@ -1,0 +1,8 @@
+<view wx:for="{{dataList}}" wx:key="unique" wx:for-index="index" wx:for-item="data">
+  <view class="calender-header">{{data.month}}月</view>
+  <view class="calender-body">
+    <view class="calender-date {{ day.disable ? 'calender-disable' : ''}}" wx:for="{{data.days}}" wx:key="unique" wx:for-index="index" wx:for-item="day">
+      {{day.name}}
+    </view>
+  </view>
+</view>

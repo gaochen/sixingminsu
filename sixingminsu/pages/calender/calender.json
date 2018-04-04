@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "ROOM1",
+  "usingComponents": {
+    "calender": "/components/calender/calender"
+  }
+}

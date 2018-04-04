@@ -1,15 +1,23 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="login">
-    <image class="login-hi" src="/images/login-hi.png" mode="aspectFill"></image>
-    <view class="login-text">登陆账号</view>
-    <view class="login-text">管理我的房源</view>
-    <view class="login-input">
-      <input placeholder="账号" type="text" bindinput="setUsername"/>
-    </view>
-    <view class="login-input">
-      <input placeholder="密码" type="password" bindinput="setPassword"/>
-    </view>
-    <image class="login-btn" src="/images/login-btn.png" mode="aspectFill" bindtap="toLogin"></image>
+  <view class="body">
+      <view class="list" bindtap="toCalender">
+          <image class="list-banner" src="/images/index-01.jpg" mode="aspectFill"></image>
+          <view class="list-info">
+            <view class="list-name">ROOM1</view>
+            <image class="list-editIcon" src="/images/index-03.png" mode="aspectFill"></image>
+          </view>
+      </view>
+      <view class="list">
+          <image class="list-banner" src="/images/index-02.jpg" mode="aspectFill"></image>
+          <view class="list-info">
+            <view class="list-name">ROOM2</view>
+            <image class="list-editIcon" src="/images/index-03.png" mode="aspectFill"></image>
+          </view>
+      </view>
+  </view>
+  <view class="navBar">
+    <view class="navItem active">房源</view>
+    <view class="navItem">民宿管家</view>
   </view>
 </view>

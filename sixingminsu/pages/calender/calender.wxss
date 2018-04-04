@@ -1,0 +1,23 @@
+.header {
+  width: 742rpx;
+  margin: 0 4rpx;
+  height: 80rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.header-text {
+  width: 106rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #474443;
+}
+.body {
+  padding-top: 81rpx;
+}

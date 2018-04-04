@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="login">
+    <image class="login-hi" src="/images/login-hi.png" mode="aspectFill"></image>
+    <view class="login-text">登陆账号</view>
+    <view class="login-text">管理我的房源</view>
+    <view class="login-input">
+      <input placeholder="账号" type="text" bindinput="setUsername"/>
+    </view>
+    <view class="login-input">
+      <input placeholder="密码" type="password" bindinput="setPassword"/>
+    </view>
+    <image class="login-btn" src="/images/login-btn.png" mode="aspectFill" bindtap="toLogin"></image>
+  </view>
+</view>
