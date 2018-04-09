@@ -1,14 +1,26 @@
 <view class="container">
-    <view class="header">
-      <view class="header-text">日</view>
-      <view class="header-text">一</view>
-      <view class="header-text">二</view>
-      <view class="header-text">三</view>
-      <view class="header-text">四</view>
-      <view class="header-text">五</view>
-      <view class="header-text">六</view>
-    </view>
-    <view class="body">
-      <calender disabled="{{disabled}}" length="6"></calender>
+  <view class="header">
+    <view class="header-text">日</view>
+    <view class="header-text">一</view>
+    <view class="header-text">二</view>
+    <view class="header-text">三</view>
+    <view class="header-text">四</view>
+    <view class="header-text">五</view>
+    <view class="header-text">六</view>
+  </view>
+  <view class="body">
+    <!-- 页面切换时，组件无法重载data数据 -->
+    <!-- <calender disabled="{{disabled}}" length="{{months}}"></calender> -->
+    <view wx:for="{{dataList}}" wx:key="unique" wx:for-index="index" wx:for-item="data">
+      <view class="calender-header">{{data.year}}年{{data.month}}月</view>
+      <view class="calender-body">
+        <view class="calender-date {{ day.disable || day.overdue ? 'calender-disable' : ''}} {{selected[day.value] ? 'selected' : ''}}"
+          wx:for="{{data.days}}" wx:key="unique" wx:for-index="index" wx:for-item="day" data-date="{{day.value}}" data-overdue="{{day.overdue}}"
+          bindtap="clickDate">
+          <view class="calender-text">{{day.name}}</view>
+        </view>
+      </view>
     </view>
   </view>
+  <image class="edit" bindtap="toEdit" src="/images/edit.png" mode="aspectFill"></image>
+</view>

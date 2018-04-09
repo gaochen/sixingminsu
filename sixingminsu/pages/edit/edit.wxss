@@ -1,0 +1,16 @@
+.title {
+  font-size: 32rpx;
+  width: 650rpx;
+  padding-bottom: 15rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.selectDate {
+  font-size: 30rpx;
+  width: 100%;
+  margin-top: 30rpx;
+  text-indent: 80rpx;
+}
+.mt80 {
+  margin-top: 80rpx;
+}

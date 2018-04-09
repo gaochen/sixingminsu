@@ -1,8 +1,8 @@
 <view wx:for="{{dataList}}" wx:key="unique" wx:for-index="index" wx:for-item="data">
-  <view class="calender-header">{{data.month}}月</view>
+  <view class="calender-header">{{data.year}}年{{data.month}}月</view>
   <view class="calender-body">
-    <view class="calender-date {{ day.disable ? 'calender-disable' : ''}}" wx:for="{{data.days}}" wx:key="unique" wx:for-index="index" wx:for-item="day">
-      {{day.name}}
+    <view class="calender-date {{ day.disable || day.overdue ? 'calender-disable' : ''}} {{selected[day.value] ? 'selected' : ''}}" wx:for="{{data.days}}" wx:key="unique" wx:for-index="index" wx:for-item="day" data-date="{{day.value}}" data-overdue="{{day.overdue}}" bindtap="selectDate">
+      <view class="calender-text">{{day.name}}</view>
     </view>
   </view>
 </view>

@@ -1,0 +1,6 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="title">已选日期</view>
+  <view class="selectDate" wx:for="{{dateList}}" wx:key="unique" wx:for-index="index" wx:for-item="data">{{data}}</view>
+  <view class="title mt80">选择状态</view>
+</view>
