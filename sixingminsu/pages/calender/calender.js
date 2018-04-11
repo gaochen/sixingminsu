@@ -7,9 +7,18 @@ Page({
     globalValue: [] // 存储在storage里面
   },
   toEdit: function () {
-    wx.navigateTo({
-      url: '../edit/edit'
-    })
+    let globalValue = this.data.globalValue
+    if (globalValue.length === 0) {
+      wx.showToast({
+        title: '请先选择日期',
+        icon: 'none',
+        duration: 1000
+      })
+    } else {
+      wx.navigateTo({
+        url: '../edit/edit'
+      })
+    }
   },
   onReady: function () {
     let dataList = []
@@ -83,5 +92,6 @@ Page({
       globalValue: []
     })
     wx.setStorageSync('selectDate', [])
+    console.log(1)
   }
 })

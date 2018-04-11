@@ -14,3 +14,36 @@
 .mt80 {
   margin-top: 80rpx;
 }
+.mb40 {
+  margin-bottom: 40rpx;
+}
+.row {
+  width: 650rpx;
+  height: 115rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.label {
+  font-size: 28rpx;
+}
+.checkbox {
+  width: 62rpx;
+  height: 62rpx;
+  overflow: hidden;
+}
+.checkbox-icon {
+  width: 62rpx;
+  height: 62rpx;
+  display: block;
+}
+.save {
+  width: 168rpx;
+  height: 93rpx;
+  display: block;
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+}

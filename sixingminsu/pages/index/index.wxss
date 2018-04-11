@@ -1,6 +1,11 @@
 .body {
   padding-bottom: 100rpx;
 }
+.total {
+  width: 690rpx;
+  font-size: 50rpx;
+  margin: 0 auto 40rpx auto;
+}
 .list {
   width: 690rpx;
   height: auto;

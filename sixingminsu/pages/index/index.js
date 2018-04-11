@@ -1,6 +1,7 @@
 Page({
   data: {
-    
+    dataList: [],
+    total: 4
   },
   toCalender: function() {
     wx.navigateTo({
