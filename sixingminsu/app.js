@@ -1,7 +1,9 @@
+import api from './api/index'
+
 //app.js
 App({
   data: {
-    selectDate: []
+    mini_key: 'master_dev_v1'
   },
   onLaunch: function () {
     // 展示本地存储能力
@@ -13,6 +15,9 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if (res.code) {
+          
+        }
       }
     })
     // 获取用户信息
