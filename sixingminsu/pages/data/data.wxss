@@ -1,0 +1,80 @@
+.header {
+  width: 100%;
+  height: 160rpx;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-item {
+  width: 50%;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-item-title {
+  font-size: 26rpx;
+}
+.header-item-data {
+  font-size: 46rpx;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+.header-line {
+  width: 2rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 50%;
+  margin-left: -1rpx;
+  background-color: #dddddd;
+}
+.list {
+  width: 650rpx;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.listItem {
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.listItem-portrait {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #cccccc;
+  border-radius: 40rpx;
+  margin-right: 40rpx;
+}
+.listItem-name {
+  width: 150rpx;
+  height: auto;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  margin-right: 30rpx;
+}
+.listItem-gender {
+  width: 30rpx;
+  height: 40rpx;
+  overflow: hidden;
+  flex: 1;
+}
+.listItem-gender image {
+  width: 30rpx;
+  height: 40rpx;
+  overflow: hidden;
+  display: block;
+}
+.listItem-time {
+  font-size: 26rpx;
+}

@@ -1,0 +1,7 @@
+<!--navBar.wxml-->
+<view class="ms-navBar">
+  <view class="ms-navBar-item {{ index === 0 ? 'active' : ''}}" bindtap="toList">房源</view>
+  <view class="ms-navBar-item {{ index === 1 ? 'active' : ''}}" bindtap="toData">访问统计</view>
+  <view class="ms-navBar-item {{ index === 2 ? 'active' : ''}}" bindtap="toClean">民宿管家</view>
+  <view class="ms-navBar-item {{ index === 3 ? 'active' : ''}}" bindtap="toDesign">室内装修</view>
+</view>

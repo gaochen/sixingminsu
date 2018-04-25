@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="body">
+  <view class="body hasNavBar">
     <view class="total">{{total}}间房源</view>
     <view class="list" bindtap="toCalender">
       <image class="list-banner" src="/images/index-01.jpg" mode="aspectFill"></image>
@@ -17,9 +17,5 @@
       </view>
     </view>
   </view>
-  <view class="navBar">
-    <view class="navItem active">房源</view>
-    <view class="navItem">民宿管家</view>
-    <view class="navItem">室内装修</view>
-  </view>
+  <navBar index='0'></navBar>
 </view>

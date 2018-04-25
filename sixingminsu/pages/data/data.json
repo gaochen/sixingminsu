@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "房间列表",
+  "navigationBarTitleText": "访问统计",
   "usingComponents": {
     "navBar": "/components/navBar/navBar"
   }

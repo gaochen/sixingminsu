@@ -75,13 +75,15 @@ Page({
       selected[date] = true
       globalValue.push(date)
       this.setData({
-        selected: selected
+        selected: selected,
+        globalValue: globalValue
       })
     } else {
       selected[date] = false
       globalValue.splice(num, 1)
       this.setData({
-        selected: selected
+        selected: selected,
+        globalValue: globalValue
       })
     }
     wx.setStorageSync('selectDate', globalValue)
@@ -92,6 +94,5 @@ Page({
       globalValue: []
     })
     wx.setStorageSync('selectDate', [])
-    console.log(1)
   }
 })
