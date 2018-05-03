@@ -1,4 +1,5 @@
 import api from './api/index'
+import ajax from './api/ajax'
 
 //app.js
 App({
@@ -16,7 +17,70 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
-          
+          // wx.request({
+          //   url: api.getUserOpenId,
+          //   method: 'POST',
+          //   header: {
+          //     "content-type": "application/x-www-form-urlencoded"
+          //   },
+          //   data: {
+          //     jscode: res.code,
+          //     mini_key: this.globalData.mini_key
+          //   },
+          //   success: res => {
+          //     this.globalData.openId = res.data.data.openid
+          //   },
+          //   fail: res => {
+          //     wx.showModal({
+          //       title: '提示',
+          //       content: '网络繁忙，请稍后重试',
+          //       showCancel: false
+          //     })
+          //   }
+          // })
+          ajax({
+            url: api.getUserOpenId,
+            method: 'POST',
+            data: {
+              jscode: res.code,
+              mini_key: this.globalData.mini_key
+            },
+            success: res => {
+              this.globalData.openId = res.data.data.openid
+            }
+          }).then((res) => {
+            return ajax({
+              url: api.isExistAppUser,
+              method: 'POST',
+              data: {
+                open_id: this.globalData.openId,
+                mini_key: this.globalData.mini_key
+              }
+            })
+          }).then((res) => {
+            if (res.data.data.is_exist === 0) {
+              wx.getUserInfo({
+                success: (res) => {
+                  this.globalData.userInfo = res.userInfo
+                  ajax({
+                    url: api.createUser,
+                    method: 'POST',
+                    data: {
+                      open_id: this.globalData.openId,
+                      mini_key: this.globalData.mini_key,
+                      user_name: res.userInfo.nickName,
+                      user_head: res.userInfo.avatarUrl,
+                      user_sex: res.userInfo.gender
+                    }
+                  })
+                }
+              })
+            } else {
+              console.log('当前用户已存在')
+            }
+          }).catch((error) => {
+            console.log(error)
+          })
         }
       }
     })
@@ -42,6 +106,8 @@ App({
     })
   },
   globalData: {
+    mini_key: 'master_dev_v1',
+    openId: null,
     userInfo: null
   }
 })
