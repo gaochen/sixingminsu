@@ -17,27 +17,7 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
-          // wx.request({
-          //   url: api.getUserOpenId,
-          //   method: 'POST',
-          //   header: {
-          //     "content-type": "application/x-www-form-urlencoded"
-          //   },
-          //   data: {
-          //     jscode: res.code,
-          //     mini_key: this.globalData.mini_key
-          //   },
-          //   success: res => {
-          //     this.globalData.openId = res.data.data.openid
-          //   },
-          //   fail: res => {
-          //     wx.showModal({
-          //       title: '提示',
-          //       content: '网络繁忙，请稍后重试',
-          //       showCancel: false
-          //     })
-          //   }
-          // })
+          // 获取用户openId
           ajax({
             url: api.getUserOpenId,
             method: 'POST',
@@ -49,8 +29,9 @@ App({
               this.globalData.openId = res.data.data.openid
             }
           }).then((res) => {
+            // 获取openId成功之后，判断该用户是否已存在
             return ajax({
-              url: api.isExistAppUser,
+              url: api.isExistAppUser,  
               method: 'POST',
               data: {
                 open_id: this.globalData.openId,
@@ -58,6 +39,7 @@ App({
               }
             })
           }).then((res) => {
+            // 如果该用户不存在小程序，则创建
             if (res.data.data.is_exist === 0) {
               wx.getUserInfo({
                 success: (res) => {
