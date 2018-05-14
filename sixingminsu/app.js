@@ -89,7 +89,7 @@ App({
   },
   globalData: {
     mini_key: 'master_dev_v1',
-    openId: null,
+    openId: 123,
     userInfo: null
   }
 })
