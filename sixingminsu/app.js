@@ -90,6 +90,7 @@ App({
   globalData: {
     mini_key: 'master_dev_v1',
     openId: 123,
-    userInfo: null
+    userInfo: null,
+    token: null
   }
 })

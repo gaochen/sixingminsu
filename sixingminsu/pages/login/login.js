@@ -50,6 +50,8 @@ Page({
         password: password
       },
       success: res => {
+        app.globalData.token = res.data.data.master_user_token
+
         wx.redirectTo({
           url: '../index/index'
         })

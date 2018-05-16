@@ -20,7 +20,11 @@ Page({
       })
     }
   },
-  onReady: function () {
+  onLoad: function(option) {
+    // 获取房间id
+    console.log(option.id)
+  },
+  onReady: function (option) {
     let dataList = []
     let length = this.data.length
     let disabled = this.data.disabled
