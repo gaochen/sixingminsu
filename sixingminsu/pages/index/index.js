@@ -29,20 +29,18 @@ Page({
   },
   onLoad: function () {
     // 请求房间列表
-    // ajax({
-    //   url: api.houstList,
-    //   method: 'POST',
-    //   data: {
-    //     master_user_token: ''
-    //   },
-    //   success: res => {
-
-    //   }
-    // })
-
-
-    this.setData({
-      total: this.data.dataList.length
+    ajax({
+      url: api.houstList,
+      method: 'POST',
+      data: {
+        master_user_token: app.globalData.token
+      },
+      success: res => {
+        this.setData({
+          dataList: res.data.data,
+          total: res.data.data.length
+        })
+      }
     })
   }
 })

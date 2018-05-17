@@ -19,10 +19,18 @@ const ajax = (options) => {
           }
           resolve(res)
         } else {
+          let code = res.data.code
           wx.showModal({
             title: '提示',
             content: res.data.info,
-            showCancel: false
+            showCancel: false,
+            success: function(res) {
+              if (res.confirm && (code === 5006 || code === 5005)) {
+                wx.reLaunch({
+                  url: '../login/login'
+                })
+              }
+            }
           })
         }
       },

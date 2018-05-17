@@ -50,7 +50,6 @@
 .listItem-portrait {
   width: 80rpx;
   height: 80rpx;
-  background-color: #cccccc;
   border-radius: 40rpx;
   margin-right: 40rpx;
 }

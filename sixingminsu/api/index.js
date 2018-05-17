@@ -5,7 +5,8 @@ const api = {
   isExistAppUser:`${ip}Programs/isExistAppUser`,
   createUser: `${ip}Programs/createUser`,
   login:`${ip}MasterUser/loginApp`,
-  houstList: `${ip}MasterHouse/getHouseList`
+  houstList: `${ip}MasterHouse/getHouseList`,
+  lookLog: `${ip}MasterScan/getUserLookLog`
 }
 
 export default api

@@ -8,6 +8,18 @@ Page({
     username: '',
     password: ''
   },
+  onLoad: function() {
+    wx.getStorage({
+      key: 'token',
+      success: function(res) {
+        console.log('token:' + res.data)
+        app.globalData.token = res.data
+        wx.redirectTo({
+          url: '../index/index'
+        })
+      }
+    })
+  },
   setUsername: function(e) {
     this.setData({
       username: e.detail.value
@@ -50,6 +62,10 @@ Page({
         password: password
       },
       success: res => {
+        wx.setStorage({
+          key: "token",
+          data: res.data.data.master_user_token
+        })
         app.globalData.token = res.data.data.master_user_token
 
         wx.redirectTo({

@@ -13,24 +13,16 @@
       </view>
     </view>
     <view class="list">
-      <view class="listItem">
-        <view class="listItem-portrait"></view>
-        <view class="listItem-name">测试用户一</view>
+      <view class="listItem" wx:for="{{userList}}" wx:key="index">
+        <image class="listItem-portrait" src="{{item.user_head}}" mode="aspectFill"></image>
+        <view class="listItem-name">{{item.user_name}}</view>
         <view class="listItem-gender">
-          <image wx:if="{{false}}" src="/images/female.png" mode="aspectFill"></image>
-          <image wx:if="{{true}}" src="/images/male.png" mode="aspectFill"></image>
+          <image wx:if="{{item.user_sex === 2}}" src="/images/female.png" mode="aspectFill"></image>
+          <image wx:if="{{item.user_sex === 1}}" src="/images/male.png" mode="aspectFill"></image>
         </view>
-        <view class="listItem-time">14:20</view>
+        <view class="listItem-time">{{item.look_time}}</view>
       </view>
-      <view class="listItem">
-        <view class="listItem-portrait"></view>
-        <view class="listItem-name">超长的名字展示</view>
-        <view class="listItem-gender">
-          <image wx:if="{{true}}" src="/images/female.png" mode="aspectFill"></image>
-          <image wx:if="{{false}}" src="/images/male.png" mode="aspectFill"></image>
-        </view>
-        <view class="listItem-time">14:20</view>
-      </view>
+      <!-- <view wx:if="{{userList.length === 0}}" class="listnone">今日暂无访问人次</view> -->
     </view>
   </view>
   <navBar index="1"></navBar>
