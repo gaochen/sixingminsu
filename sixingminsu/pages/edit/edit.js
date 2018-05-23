@@ -1,9 +1,14 @@
+import api from '../../api/index'
+import ajax from '../../api/ajax'
 
+const app = getApp()
 
 Page({
   data: {
     dateList: [],
-    status: -1
+    status: -1,
+    houseId: null,
+    selectDate: []
   },
   onReady: function () {
     let selectDate = wx.getStorageSync('selectDate')
@@ -19,6 +24,17 @@ Page({
     })
     this.setData({
       dateList: dateList
+    })
+    // 格式化
+    selectDate = selectDate.map(x => x.replace(/\//g, '-'))
+    this.setData({
+      selectDate: selectDate
+    })
+  },
+  onLoad: function(option) {
+    // 获取房间id
+    this.setData({
+      houseId: option.id
     })
   },
   clickValid: function() {
@@ -52,7 +68,21 @@ Page({
         duration: 1000
       })
     } else {
+      let selectDate = this.data.selectDate.join('|')
       // 提交状态，返回上一页
+      ajax({
+        url: api.setHouseDisableDate,
+        method: 'POST',
+        data: {
+          master_user_token: app.globalData.token,
+          house_id: this.data.houseId,
+          chose_date: selectDate
+        },
+        success: res => {
+          console.log(res.data)
+        }
+      })
+
       wx.navigateBack({
         delta: 1
       })

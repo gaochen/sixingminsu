@@ -26,6 +26,9 @@ const ajax = (options) => {
             showCancel: false,
             success: function(res) {
               if (res.confirm && (code === 5006 || code === 5005)) {
+                wx.removeStorage({
+                  key: 'token'
+                })
                 wx.reLaunch({
                   url: '../login/login'
                 })
