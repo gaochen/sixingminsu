@@ -5,10 +5,17 @@
     <view class="login-text">登陆账号</view>
     <view class="login-text">管理我的房源</view>
     <view class="login-input">
-      <input placeholder="账号" type="text" bindinput="setUsername"/>
+      <input placeholder="账号" type="text" bindinput="setUsername" />
     </view>
     <view class="login-input">
-      <input placeholder="密码" type="password" bindinput="setPassword"/>
+      <input placeholder="密码" type="password" bindinput="setPassword" />
+    </view>
+    <view class="row" bindtap="change">
+      <view class="checkbox">
+        <image class="checkbox-icon" hidden="{{!checked}}" src="/images/edit-01.png" mode="aspectFill"></image>
+        <image class="checkbox-icon" src="/images/edit-02.png" mode="aspectFill"></image>
+      </view>
+      <view class="label">理解并同意《服务协议》的全部内容</view>
     </view>
     <image class="login-btn" src="/images/login-btn.png" mode="aspectFill" bindtap="toLogin"></image>
   </view>

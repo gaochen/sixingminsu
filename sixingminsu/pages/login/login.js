@@ -6,7 +6,8 @@ const app = getApp()
 Page({
   data: {
     username: '',
-    password: ''
+    password: '',
+    checked: false
   },
   onLoad: function() {
     wx.getStorage({
@@ -18,6 +19,13 @@ Page({
           url: '../index/index'
         })
       }
+    })
+  },
+  change: function(e) {
+    let checked = this.data.checked
+    checked = !checked
+    this.setData({
+      checked: checked
     })
   },
   setUsername: function(e) {
@@ -32,7 +40,8 @@ Page({
   },
   toLogin: function() {
     let username = this.data.username
-    let password = this. data.password
+    let password = this.data.password
+    let checked = this.data.checked
 
     if (!username) {
       wx.showToast({
@@ -46,6 +55,15 @@ Page({
     if (!password) {
       wx.showToast({
         title: '密码不能为空',
+        icon: 'none',
+        duration: 1000
+      })
+      return false
+    }
+
+    if (!checked) {
+      wx.showToast({
+        title: '请先阅读并同意《服务协议》',
         icon: 'none',
         duration: 1000
       })

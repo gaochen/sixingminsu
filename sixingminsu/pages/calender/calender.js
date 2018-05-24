@@ -73,10 +73,12 @@ Page({
         house_id: this.data.houseId
       },
       success: res => {
-        console.log(res.data)
+        let disabled = []
+        if (res.data.data && res.data.data.length > 0) {
+          disabled = res.data.data.map(x => x.replace(/-/g, '/'))
+        }
         let dataList = []
         let length = this.data.length
-        let disabled = this.data.disabled
 
         let currentYear = new Date().getFullYear()
         let currentMonth = new Date().getMonth()
@@ -94,7 +96,7 @@ Page({
           }
           let data = { 'year': year, 'month': month + 1, 'monthCN': monthCN, days: days, maxDay: maxDay }
           for (let j = 1; j < maxDay + 1; j++) {
-            let value = `${year}/${month + 1}/${j}`
+            let value = `${year}/${('0' + (month + 1)).slice(-2)}/${('0' + j).slice(-2)}`
             let day = {
               'value': value,
               'disable': false,   // 判断是否被屏蔽

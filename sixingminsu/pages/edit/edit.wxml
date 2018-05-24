@@ -1,21 +1,23 @@
 <!--logs.wxml-->
 <view class="container">
-  <view class="title">已选日期</view>
-  <view class="selectDate" wx:for="{{dateList}}" wx:key="unique" wx:for-index="index" wx:for-item="data">{{data}}</view>
-  <view class="title mt80 mb40">选择状态</view>
-  <view class="row">
-    <view class="label">可订</view>
-    <view class="checkbox" bindtap="clickValid">
-      <image class="checkbox-icon" hidden="{{status !== 1}}" src="/images/edit-01.png" mode="aspectFill"></image>
-      <image class="checkbox-icon" src="/images/edit-02.png" mode="aspectFill"></image>
-    </view>
+  <view class="body">
+      <view class="title">已选日期</view>
+      <view class="selectDate" wx:for="{{dateList}}" wx:key="unique" wx:for-index="index" wx:for-item="data">{{data}}</view>
+      <view class="title mt80 mb40">选择状态</view>
+      <view class="row">
+        <view class="label">可订</view>
+        <view class="checkbox" bindtap="clickValid">
+          <image class="checkbox-icon" hidden="{{status !== 1}}" src="/images/edit-01.png" mode="aspectFill"></image>
+          <image class="checkbox-icon" src="/images/edit-02.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="row mb100">
+        <view class="label">屏蔽</view>
+        <view class="checkbox" bindtap="clickInvalid">
+          <image class="checkbox-icon" hidden="{{status !== 0}}" src="/images/edit-01.png" mode="aspectFill"></image>
+          <image class="checkbox-icon" src="/images/edit-02.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <image class="save" bindtap="toSave" src="/images/save.png" mode="aspectFill"></image>
   </view>
-  <view class="row">
-    <view class="label">屏蔽</view>
-    <view class="checkbox" bindtap="clickInvalid">
-      <image class="checkbox-icon" hidden="{{status !== 0}}" src="/images/edit-01.png" mode="aspectFill"></image>
-      <image class="checkbox-icon" src="/images/edit-02.png" mode="aspectFill"></image>
-    </view>
-  </view>
-  <image class="save" bindtap="toSave" src="/images/save.png" mode="aspectFill"></image>
 </view>

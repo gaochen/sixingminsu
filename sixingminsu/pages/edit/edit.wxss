@@ -26,6 +26,9 @@
   align-items: center;
   margin: 0 auto;
 }
+.mb100 {
+  margin-bottom: 100rpx;
+}
 .label {
   font-size: 28rpx;
 }
