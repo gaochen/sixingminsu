@@ -5,20 +5,7 @@ const app = getApp()
 
 Page({
   data: {
-    dataList: [{
-      id: 1,
-      name: 'ROOM1',
-      long_title: '',
-      cover_img_url: 'http://img1.3lian.com/2015/w7/85/d/101.jpg',
-      price: ''
-    },
-    {
-      id: 2,
-      name: 'ROOM1',
-      long_title: '',
-      cover_img_url: 'http://img1.3lian.com/2015/w7/85/d/101.jpg',
-      price: ''
-    }],
+    dataList: [],
     total: 0
   },
   toCalender: function(event) {

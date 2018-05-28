@@ -50,10 +50,10 @@ Page({
   },
   clickInvalid: function() {
     let status = this.data.status
-    if (status === 0) {
+    if (status === 2) {
       status = -1
     } else {
-      status = 0
+      status = 2
     }
     this.setData({
       status: status
@@ -76,7 +76,8 @@ Page({
         data: {
           master_user_token: app.globalData.token,
           house_id: this.data.houseId,
-          chose_date: selectDate
+          chose_date: selectDate,
+          enable: status
         },
         success: res => {
           console.log(res.data)

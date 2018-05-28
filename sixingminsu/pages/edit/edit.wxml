@@ -14,7 +14,7 @@
       <view class="row mb100">
         <view class="label">屏蔽</view>
         <view class="checkbox" bindtap="clickInvalid">
-          <image class="checkbox-icon" hidden="{{status !== 0}}" src="/images/edit-01.png" mode="aspectFill"></image>
+          <image class="checkbox-icon" hidden="{{status !== 2}}" src="/images/edit-01.png" mode="aspectFill"></image>
           <image class="checkbox-icon" src="/images/edit-02.png" mode="aspectFill"></image>
         </view>
       </view>
