@@ -71,6 +71,7 @@ App({
     mini_key: 'master_dev_v1',
     openId: null,
     userInfo: null,
-    token: null
+    token: null,
+    isExist: false
   }
 })

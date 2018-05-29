@@ -68,3 +68,88 @@
   height: 30rpx;
   display: block;
 }
+
+/* 授权 */
+.authorize {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  z-index: 100;
+}
+.authorize-content {
+  width: 450rpx;
+  height: 350rpx;
+  padding: 40rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+  border-radius: 5rpx;
+}
+.authorize-header {
+  font-size: 36rpx;
+}
+.authorize-title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.authorize-portrait {
+  width: 80rpx;
+  height: 80rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.authorize-name {
+  width: 340rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.authorize-detail {
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #757475;
+  position: relative;
+  text-indent: 35rpx;
+  margin: 30rpx 0;
+}
+.authorize-detail::before {
+  content: '';
+  width: 12rpx;
+  height: 12rpx;
+  background-color: #757475;
+  position: absolute;
+  top: 20rpx;
+  left: 10rpx; 
+  border-radius: 50%;
+}
+.authorize-btns {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.authorize-reject {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+.authorize-approve {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}

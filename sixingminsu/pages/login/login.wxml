@@ -19,4 +19,18 @@
     </view>
     <image class="login-btn" src="/images/login-btn.png" mode="aspectFill" bindtap="toLogin"></image>
   </view>
+  <view class="authorize">
+    <view class="authorize-content">
+      <view class="authorize-header">小程序授权</view>
+      <view class="authorize-title">
+        <image class="authorize-portrait" src="/images/logo.png" mode="aspectFill"></image>
+        <view class="authorize-name">行宿申请获取以下权限：</view>
+      </view>
+      <view class="authorize-detail">获取您的公开信息（昵称、头像等）</view>
+      <view class="authorize-btns">
+        <button class="authorize-reject" type="default">拒绝</button>
+        <button class="authorize-approve" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">允许</button>
+      </view>
+    </view>
+  </view>
 </view>
