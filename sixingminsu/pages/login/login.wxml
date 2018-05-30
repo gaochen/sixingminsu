@@ -7,7 +7,7 @@
     <view class="login-input">
       <input placeholder="账号" type="text" bindinput="setUsername" />
     </view>
-    <view class="login-input">
+    <view class="login-input"> 
       <input placeholder="密码" type="password" bindinput="setPassword" />
     </view>
     <view class="row" bindtap="change">
@@ -19,7 +19,7 @@
     </view>
     <image class="login-btn" src="/images/login-btn.png" mode="aspectFill" bindtap="toLogin"></image>
   </view>
-  <view class="authorize">
+  <!-- <view class="authorize">
     <view class="authorize-content">
       <view class="authorize-header">小程序授权</view>
       <view class="authorize-title">
@@ -32,5 +32,5 @@
         <button class="authorize-approve" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">允许</button>
       </view>
     </view>
-  </view>
+  </view> -->
 </view>
