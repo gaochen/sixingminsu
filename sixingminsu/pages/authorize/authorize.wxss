@@ -1,8 +1,58 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.authorize {
+  width: 610rpx;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
 }
-.log-item {
-  margin: 10rpx;
+.authorize-header {
+  width: 100%;
+  height: auto;
+  font-size: 38rpx;
+  padding: 55rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+  margin-top: 115rpx;
+}
+.authorize-title {
+  width: 100%;
+  margin: 55rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.authorize-portrait {
+  width: 85rpx;
+  height: 85rpx;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.authorize-name {
+  font-size: 32rpx;
+  margin-left: 40rpx;
+}
+.authorize-detail {
+  font-size: 32rpx;
+  margin-bottom: 75rpx;
+}
+.authorize-btnBox {
+  width: 610rpx;
+  height: 94rpx;
+  position: relative;
+  overflow: hidden;
+}
+.authorize-btnImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+.authorize-btn {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
 }

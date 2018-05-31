@@ -8,12 +8,12 @@ Page({
     currentMonth: 0,
     total: 0,
     userList: [
-      {
-        user_head: 'http://img1.3lian.com/2015/w7/85/d/101.jpg',
-        user_name: '测试',
-        user_sex: 1,
-        look_time: '13:55'
-      }
+      // {
+      //   user_head: 'http://img1.3lian.com/2015/w7/85/d/101.jpg',
+      //   user_name: '测试',
+      //   user_sex: 1,
+      //   look_time: '13:55'
+      // }
     ]
   },
   onLoad: function() {

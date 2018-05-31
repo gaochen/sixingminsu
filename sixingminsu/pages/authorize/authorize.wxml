@@ -1,4 +1,14 @@
-<!--logs.wxml-->
 <view class="container">
-  
+  <view class="authorize">
+      <view class="authorize-header">小程序授权</view>
+      <view class="authorize-title">
+        <image class="authorize-portrait" src="/images/logo.png" mode="aspectFill"></image>
+        <view class="authorize-name">行宿申请获取以下权限：</view>
+      </view>
+      <view class="authorize-detail">获取你的公开信息（昵称、头像等）</view>
+      <view class="authorize-btnBox">
+        <image class="authorize-btnImg" src="/images/authorize.png" mode="aspectFill"></image>
+        <button class="authorize-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">立即开启</button>
+      </view>
+  </view>
 </view>

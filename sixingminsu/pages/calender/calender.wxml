@@ -23,4 +23,10 @@
     </view>
   </view>
   <image class="edit" hidden="{{globalValue.length === 0}}" bindtap="toEdit" src="/images/edit.png" mode="aspectFill"></image>
+  <view class="sync" hidden="{{globalValue.length > 0}}">
+    <view class="sync-info">
+      一键同步各平台房源出租信息
+    </view>
+    <image class="sycn-btn" bindtap="toSync" src="/images/sync.png" mode="aspectFill"></image>
+  </view>
 </view>

@@ -36,24 +36,24 @@ App({
           }).then((res) => {
             // 如果该用户不存在小程序，则创建
             if (res.data.data.is_exist === 0) {
-              wx.authorize({
-                scope: 'scope.userInfo',
+              wx.getUserInfo({
                 success: (res) => {
-                  wx.getUserInfo({
-                    success: (res) => {
-                      this.globalData.userInfo = res.userInfo
-                      ajax({
-                        url: api.createUser,
-                        method: 'POST',
-                        data: {
-                          open_id: this.globalData.openId,
-                          mini_key: this.globalData.mini_key,
-                          user_name: res.userInfo.nickName,
-                          user_head: res.userInfo.avatarUrl,
-                          user_sex: res.userInfo.gender
-                        }
-                      })
+                  this.globalData.userInfo = res.userInfo
+                  ajax({
+                    url: api.createUser,
+                    method: 'POST',
+                    data: {
+                      open_id: this.globalData.openId,
+                      mini_key: this.globalData.mini_key,
+                      user_name: res.userInfo.nickName,
+                      user_head: res.userInfo.avatarUrl,
+                      user_sex: res.userInfo.gender
                     }
+                  })
+                },
+                fail: (res) => {
+                  wx.redirectTo({
+                    url: '../authorize/authorize'
                   })
                 }
               })

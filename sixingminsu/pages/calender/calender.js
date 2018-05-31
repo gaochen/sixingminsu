@@ -10,6 +10,8 @@ Page({
     houseId: null,
     globalValue: [] // 存储在storage里面
   },
+  toSync: function() {
+  },
   toEdit: function () {
     let globalValue = this.data.globalValue
     if (globalValue.length === 0) {
