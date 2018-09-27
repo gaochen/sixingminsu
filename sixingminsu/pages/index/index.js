@@ -6,7 +6,7 @@ const app = getApp()
 Page({
   data: {
     dataList: [],
-    total: 0
+    total: 2
   },
   toCalender: function(event) {
     let id = event.currentTarget.dataset.id
@@ -16,18 +16,18 @@ Page({
   },
   onLoad: function () {
     // 请求房间列表
-    ajax({
-      url: api.houstList,
-      method: 'POST',
-      data: {
-        master_user_token: app.globalData.token
-      },
-      success: res => {
-        this.setData({
-          dataList: res.data.data,
-          total: res.data.data.length
-        })
-      }
-    })
+    // ajax({
+    //   url: api.houstList,
+    //   method: 'POST',
+    //   data: {
+    //     master_user_token: app.globalData.token
+    //   },
+    //   success: res => {
+    //     this.setData({
+    //       dataList: res.data.data,
+    //       total: res.data.data.length
+    //     })
+    //   }
+    // })
   }
 })

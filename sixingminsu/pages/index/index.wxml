@@ -2,27 +2,27 @@
 <view class="container">
   <view class="body hasNavBar">
     <view class="total">{{total}}间房源</view>
-    <!-- <view class="list" bindtap="toCalender">
+    <view class="list" bindtap="toCalender" data-id="1">
       <image class="list-banner" src="/images/index-01.jpg" mode="aspectFill"></image>
       <view class="list-info">
         <view class="list-name">ROOM1</view>
         <image class="list-editIcon" src="/images/index-03.png" mode="aspectFill"></image>
       </view>
     </view>
-    <view class="list">
+    <view class="list" bindtap="toCalender" data-id="2">
       <image class="list-banner" src="/images/index-02.jpg" mode="aspectFill"></image>
       <view class="list-info">
         <view class="list-name">ROOM2</view>
         <image class="list-editIcon" src="/images/index-03.png" mode="aspectFill"></image>
       </view>
-    </view> -->
-    <view class="list" wx:for="{{dataList}}" data-id="{{item.id}}" wx:key="index" bindtap="toCalender">
+    </view>
+    <!-- <view class="list" wx:for="{{dataList}}" data-id="{{item.id}}" wx:key="index" bindtap="toCalender">
       <image class="list-banner" src="{{item.cover_img_url}}" mode="aspectFill"></image>
       <view class="list-info">
         <view class="list-name">{{item.name}}</view>
         <image class="list-editIcon" src="/images/index-03.png" mode="aspectFill"></image>
       </view>
-    </view>
+    </view> -->
   </view>
   <navBar index='0'></navBar>
 </view>

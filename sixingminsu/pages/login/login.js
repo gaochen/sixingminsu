@@ -7,19 +7,19 @@ Page({
   data: {
     username: '',
     password: '',
-    checked: false
+    checked: true
   },
   onLoad: function() {
-    wx.getStorage({
-      key: 'token',
-      success: function(res) {
-        console.log('token:' + res.data)
-        app.globalData.token = res.data
-        wx.redirectTo({
-          url: '../index/index'
-        })
-      }
-    })
+    // wx.getStorage({
+    //   key: 'token',
+    //   success: function(res) {
+    //     console.log('token:' + res.data)
+    //     app.globalData.token = res.data
+    //     wx.redirectTo({
+    //       url: '../index/index'
+    //     })
+    //   }
+    // })
   },
   change: function(e) {
     let checked = this.data.checked
@@ -70,26 +70,58 @@ Page({
       return false
     }
 
-    ajax({
-      url: api.login,
-      method: 'POST',
-      data: {
-        open_id: app.globalData.openId,
-        mini_key: app.globalData.mini_key,
-        account: username,
-        password: password
-      },
-      success: res => {
-        wx.setStorage({
-          key: "token",
-          data: res.data.data.master_user_token
-        })
-        app.globalData.token = res.data.data.master_user_token
 
-        wx.redirectTo({
-          url: '../index/index'
+    // 登录验证
+    const DB = wx.cloud.database()
+    const USER = DB.collection('user')
+
+    USER.where({
+      username: username
+    }).get().then(res => {
+      console.log(res)
+      if (res.data.length > 0) {
+        if (res.data[0].password === password) {
+          app.globalData.userId = res.data[0]._id
+          wx.redirectTo({
+            url: '../index/index'
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '密码输入错误',
+            showCancel: false
+          })
+        }
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: '用户名无效',
+          showCancel: false
         })
       }
     })
+    
+
+    // ajax({
+    //   url: api.login,
+    //   method: 'POST',
+    //   data: {
+    //     open_id: app.globalData.openId,
+    //     mini_key: app.globalData.mini_key,
+    //     account: username,
+    //     password: password
+    //   },
+    //   success: res => {
+    //     wx.setStorage({
+    //       key: "token",
+    //       data: res.data.data.master_user_token
+    //     })
+    //     app.globalData.token = res.data.data.master_user_token
+
+    //     wx.redirectTo({
+    //       url: '../index/index'
+    //     })
+    //   }
+    // })
   }
 })
