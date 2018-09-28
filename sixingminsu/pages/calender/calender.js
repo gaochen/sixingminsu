@@ -12,7 +12,13 @@ Page({
         houseId: null,
         globalValue: [] // 存储在storage里面
     },
-    toSync: function() {},
+    toSync: function() {
+        wx.showToast({
+            icon: 'none',
+            duration: 1500,
+            title: '暂无该功能'
+        })
+    },
     toEdit: function() {
         let globalValue = this.data.globalValue
         if (globalValue.length === 0) {
@@ -67,17 +73,17 @@ Page({
         })
         wx.setStorageSync('selectDate', [])
 
-        // 登录验证
+        // 获取屏蔽的时间
         const DB = wx.cloud.database()
         const DATE = DB.collection('date')
 
-        console.log(app.globalData.userId)
-
         DATE.where({
-            userId: app.globalData.userId
+            userId: app.globalData.userId,
+            roomId: this.data.houseId
         })
             .get()
             .then(res => {
+                console.log(res)
                 let dataList = []
                 let currentYear = new Date().getFullYear()
                 let currentMonth = new Date().getMonth()
@@ -135,7 +141,7 @@ Page({
                             overdue: false // 判断是否已过期
                         }
                         if (disabled.indexOf(value) !== -1) {
-                          day.disable = true
+                            day.disable = true
                         }
                         if (new Date().getTime() > new Date(value).getTime()) {
                             day.overdue = true
@@ -146,6 +152,13 @@ Page({
                 }
                 this.setData({
                     dataList: dataList
+                })
+            })
+            .catch(error => {
+                wx.showToast({
+                    icon: 'none',
+                    duration: 3000,
+                    title: error
                 })
             })
     }

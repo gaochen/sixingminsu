@@ -17,20 +17,20 @@ Page({
     ]
   },
   onLoad: function() {
-    ajax({
-      url: api.lookLog,
-      method: 'POST',
-      data: {
-        master_user_token: app.globalData.token
-      },
-      success: res => {
-        console.log(res.data.data)
-        this.setData({
-          userList: res.data.data.today_look_list,
-          total: res.data.data.total_look_num,
-          currentMonth: res.data.data.month_look_num
-        })
-      }
-    })
+    // ajax({
+    //   url: api.lookLog,
+    //   method: 'POST',
+    //   data: {
+    //     master_user_token: app.globalData.token
+    //   },
+    //   success: res => {
+    //     console.log(res.data.data)
+    //     this.setData({
+    //       userList: res.data.data.today_look_list,
+    //       total: res.data.data.total_look_num,
+    //       currentMonth: res.data.data.month_look_num
+    //     })
+    //   }
+    // })
   }
 })
